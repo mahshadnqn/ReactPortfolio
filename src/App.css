@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata&family=Roboto+Condensed&display=swap');
+
+html {
+	box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+*, *:after, *:before {
+	box-sizing: inherit;
+}
+body{
+	margin: 0;
+	padding: 0;	
+	text-align: left;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center	;
+}
+.horizontal-flex-items{
+	flex: 1 0 100% ;
+}
+.about-flex-container {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	justify-content: center	
+}
+.flex-container {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	justify-content: center	;
+}
+.flex-items {
+	flex: 1 0 50%;
+}
+.project-flex-items{
+	flex:1 ;
+}
+/*visually hidden but still available to screen readers*/
+.hidden {
+	position:absolute;
+	left:-10000px;
+ 	width:1px;
+	height:1px;
+}
+h2 {
+	text-align: center;
+	font-size: 2em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*-- Header ----------------------------------------------------------------------------*/
+#header {
+    background-color: #010743 ;
+    padding: 20px;
+}
+#logo a {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 600;
+	font-family: "Bebas Neue", sans-serif ;
+}
+#logo {
+	flex: 1 1 50%;
+	margin:8px 0 0 10px;
+}
+#main-menu {
+	flex: 1 1 50%;
+}
+#main-menu li{
+	display: inline-flex;
+	list-style-type: none;
+	flex: 0 1 100%;
+	overflow: hidden;    /*hiding the uderline*/   
+}
+#main-menu a {
+	color: #ffffff;
+	font-size: 1.2em;
+    font-weight: 800;
+	position: relative;
+	transition: all 0.3s ease-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+
+/*main------------------------------------------------*/
+
+
+#main {
+    background-color: #141847;
+	font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#skill, #project, #contact {
+	padding: 50px 0;
+	width: 85%;
+	margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+/* About -------------------------------------------*/
+#about {
+	width: 80%;
+	padding: 80px 0 50px 0;
+	margin: 0 auto;
+}
+#about-header {
+	text-align: left;
+	flex: 1 0 100%;
+}
+#photo {
+	flex: 1 0 30%;
+}
+#description {
+	flex: 1 0 70%;
+	padding: 0 20px ;
+	text-align: left;
+}
+#description p {
+	text-align: justify;
+}
+#resume-btn {
+	background-color: #131847;
+	border: 2px solid #ffffff;
+	padding: 15px 0;
+	width: 210px;
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 700;
+}
+#resume-btn:hover, #send-btn:hover {
+	cursor: pointer;
+	background-color: #ffffff;
+	color: #131847;
+}
+/* skills --------------------------------------*/
+.progress-bar-border{
+	width: 450px;
+	height: 25px;
+	border: 2px solid #ffffff;
+}
+.progress-bar {
+	background-color: #ffffff;
+	height: 100%;
+}
+.center {
+	width: 450px;
+	margin: 0 auto;
+}
+.project-center {
+	width: 70%;
+	margin: 0 auto;
+}
+div.project-center > * {
+	margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*projects -----------------------------------------------------*/
+
+.project-item {
+	background-color: #131847;
+	flex: 0 0 270px;
+	width: 230px;
+	height: 300px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	perspective: 500px;
 }
+.project-item-inner {
+	width: 100%;
+	height: 100%;
+	transition: transform 1s;
+	position: relative;
+	transform-style: preserve-3d;
+}
+.project-item-inner:hover {
+	transform: rotateY(180deg);
+}
+.project-item-inner:hover .project-front {
+	z-index: 1;
+}
+.project-back {
+	background-color: #ffffff;
+	z-index: 2;
+	transform: rotateY(180deg);
+} 
+.project-front {
+	background-color: #ffffff;
+	z-index: 3;
+}
+.project-back, .project-front {
+	position: absolute;
+	color: #010743;
+	width: 270px;
+	height: 300px;
+}
+.project-back p {
+	padding: 100px 30px 0 30px;
+	text-align: center;
+}
+
+/* Contact -------------------------------------------------------*/
+#form {
+	width: 350px;
+	margin: 0 auto;
+}
+#name, #email, #comment {
+	width: 350px;
+	padding: 5px 0;
+	margin-bottom: 20px;
+}
+#send-btn {
+	background-color: #131847;
+	border: 2px solid #ffffff;
+	padding: 15px 0;
+	width: 350px;
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+
+/* -- Footer --------------------------------------------------------------*/
+#footer {
+    background-color: #010743 ;
+    color: #ffffff;
+    text-align: center;
+}
+
+
